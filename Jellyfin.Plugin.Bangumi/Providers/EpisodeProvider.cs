@@ -95,7 +95,7 @@ public class EpisodeProvider : IRemoteMetadataProvider<Episode, EpisodeInfo>, IH
         result.Item.Name = episode.GetName(Configuration);
         result.Item.OriginalTitle = episode.OriginalName;
         result.Item.IndexNumber = (int)episode.Order + localConfiguration.Offset;
-        result.Item.Overview = string.IsNullOrEmpty(episode.Description) ? null : episode.Description;
+        result.Item.Overview = null
         result.Item.ParentIndexNumber = info.ParentIndexNumber ?? 1;
 
         var parent = _libraryManager.FindByPath(Path.GetDirectoryName(info.Path), true);
